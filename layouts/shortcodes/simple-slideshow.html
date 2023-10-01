@@ -1,12 +1,12 @@
-{{ $imgs := (.Page.Resources.ByType "image") }}
+{{ $imgs := .Page.Resources.ByType "image" }}
 {{ if .Get "dir"}}
-	{{ $imgs = (.Page.Resources.Match (.Get "dir")) }}
+	{{ $imgs = .Page.Resources.Match (.Get "dir") }}
 {{ end }}
 
 {{ $icon := resources.Get "svg/simple-slideshow-arrow.svg" }}
 
 {{ $topSlideBar := .Get "topSlideBar" | default true }}
-{{ $scrollIntoView := .Get "scrollIntoView" | default true}}
+{{ $scrollIntoView := .Get "scrollIntoView" | default true }}
 {{ $maxThumbnailHeight := .Get "maxThumbnailHeight" | default 150 }}
 
 <style>
@@ -63,7 +63,7 @@
 <div class="simple-slideshow-container">
     <div class="simple-slideshow-slides">
         {{ range $index, $img := $imgs }}
-            {{ $thumbnail := ($img.Fit (print 9999 "x" $maxThumbnailHeight))}}
+            {{ $thumbnail := $img.Fit (print 9999 "x" $maxThumbnailHeight)}}
             <img class="simple-slideshow-slide" src="{{ $thumbnail.RelPermalink }}" width="{{ $thumbnail.Width }}" height="{{ $thumbnail.Height }}" onclick="showSlide({{$index}})">
         {{ end }}
     </div>
@@ -71,7 +71,7 @@
         <div class="simple-slideshow-imgs-container">
             <img src="{{ $icon.RelPermalink }}" class="simple-slideshow-arrow" onclick="showPrevious()"/>
             <img src="{{ $icon.RelPermalink }}" class="simple-slideshow-arrow right-arrow" onclick="showNext()"/>
-            {{ range $img := $imgs}}
+            {{ range $img := $imgs }}
             <img src="{{ $img.RelPermalink }}" style="width: 100%; display: none;" class="simple-slideshow-img" loading="lazy">
             {{ end }}
             </div>
@@ -102,10 +102,10 @@
         {{ if $scrollIntoView }}
         if (!firstLoad)
             setTimeout( // eliminates the time between waiting for img and scrolling.
-                () => imgs[curIndex].scrollIntoView({behavior:"smooth", block:"center"}),
+                () => imgs[curIndex].scrollIntoView({ behavior: "smooth", block: "center" }),
                 150);
         else
-            firstLoad= false;
+            firstLoad = false;
         {{ end }}
     }
 
