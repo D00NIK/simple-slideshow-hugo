@@ -67,8 +67,8 @@ Example:
 
 ## To Do
 
-◻️ Page jumping fix
-◻️ Allow multiple per page
-◻️ Automatically optimize images
-◻️ Sorting option
+- ◻️ Page jumping fix
+- ◻️ Allow multiple per page
+- ◻️ Automatically optimize images
+- ◻️ Sorting option
 
