@@ -80,7 +80,7 @@
 
 <script>
     const imgs = document.getElementsByClassName("simple-slideshow-img");
-    let curIndex = 0, firstLoad = true;
+    let curIndex = 0;
 
     function showPrevious() {
         showSlide(curIndex-1);
@@ -100,14 +100,12 @@
         curIndex = n;
 
         {{ if $scrollIntoView }}
-        if (!firstLoad)
-            setTimeout( // eliminates the time between waiting for img and scrolling.
-                () => imgs[curIndex].scrollIntoView({ behavior: "smooth", block: "center" }),
-                150);
-        else
-            firstLoad = false;
+        setTimeout( // eliminates the time between waiting for img and scrolling.
+            () => imgs[curIndex].scrollIntoView({ behavior: "smooth", block: "center" }),
+            150);
         {{ end }}
     }
 
-    showSlide(0);
+    if (imgs.length !== 0)
+        imgs[0].style.display = "block";
 </script>
