@@ -65,5 +65,10 @@ Example:
 {{< simple-slideshow dir=img/* topSlideBar=false scrollIntoView=false maxThumbnailHeight=300 >}}
 ```
 
-## TO DO
+## To Do
+
+◻️ Page jumping fix
+◻️ Allow multiple per page
+◻️ Automatically optimize images
+◻️ Sorting option
 
