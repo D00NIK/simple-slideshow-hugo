@@ -1,4 +1,7 @@
 # simple-slideshow-hugo
+
+![Showcase image](showcase.webp)
+
 Pros:
 - Clean, efficient code
 - Not using any JS framework, library and other bloat
