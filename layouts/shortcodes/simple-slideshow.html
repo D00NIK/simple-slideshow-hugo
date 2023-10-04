@@ -5,6 +5,7 @@
 
 {{ $icon := resources.Get "svg/simple-slideshow-arrow.svg" }}
 
+{{ $sortOrder := .Get "sortOrder" | default "asc"}}
 {{ $topSlideBar := .Get "topSlideBar" | default true }}
 {{ $scrollIntoView := .Get "scrollIntoView" | default true }}
 {{ $maxThumbnailHeight := .Get "maxThumbnailHeight" | default 150 }}
@@ -60,9 +61,10 @@
         right: 0;
     }
 </style>
+
 <div class="simple-slideshow-container">
     <div class="simple-slideshow-slides">
-        {{ range $index, $img := $imgs }}
+        {{ range $index, $img := sort $imgs "Title" $sortOrder }}
             {{ $thumbnail := $img.Fit (print 9999 "x" $maxThumbnailHeight)}}
             <img class="simple-slideshow-slide" src="{{ $thumbnail.RelPermalink }}" width="{{ $thumbnail.Width }}" height="{{ $thumbnail.Height }}" onclick="showSlide({{$index}})">
         {{ end }}

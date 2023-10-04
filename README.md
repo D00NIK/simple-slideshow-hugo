@@ -58,6 +58,7 @@ content/
 - `topSlideBar` - default: `true` - slidebar for thumbnails on top
 - `scrollIntoView` - default: `true` - when changing slide scrolls if the image is outside of user's vision
 - `maxThumbnailHeight` - default: 150 - max thumbnail height in px.
+- 'sortOrder' - default: 'asc' - thumbnails sortOrder. For descending 'desc'.
 
 Example:
 
@@ -67,8 +68,8 @@ Example:
 
 ## To Do
 
-- ◻️ Page jumping fix
-- ◻️ Allow multiple per page
-- ◻️ Automatically optimize images
-- ◻️ Sorting option
+- ❌ Page jumping fix
+- ❌ Allow multiple per page
+- ❌ Automatically optimize images
+- ✅ Sorting option
 
