@@ -5,7 +5,7 @@
 
 {{ $icon := resources.Get "svg/simple-slideshow-arrow.svg" }}
 
-{{ $sortOrder := .Get "sortOrder" | default "asc"}}
+{{ $sortOrder := .Get "sortOrder" | default "asc" }}
 {{ $topSlideBar := .Get "topSlideBar" | default true }}
 {{ $scrollIntoView := .Get "scrollIntoView" | default true }}
 {{ $maxThumbnailHeight := .Get "maxThumbnailHeight" | default 150 }}
@@ -35,10 +35,6 @@
         opacity: .5;
     }
 
-    .simple-slideshow-imgs {
-        min-height: 648px; /* reduces page jumping */
-    }
-
     .simple-slideshow-imgs-container {
         position: relative;
     }
@@ -65,7 +61,7 @@
 <div class="simple-slideshow-container">
     <div class="simple-slideshow-slides">
         {{ range $index, $img := sort $imgs "Title" $sortOrder }}
-            {{ $thumbnail := $img.Fit (print 9999 "x" $maxThumbnailHeight)}}
+            {{ $thumbnail := $img.Fit (print 9999 "x" $maxThumbnailHeight) }}
             <img class="simple-slideshow-slide" src="{{ $thumbnail.RelPermalink }}" width="{{ $thumbnail.Width }}" height="{{ $thumbnail.Height }}" onclick="showSlide({{$index}})">
         {{ end }}
     </div>
@@ -74,15 +70,19 @@
             <img src="{{ $icon.RelPermalink }}" class="simple-slideshow-arrow" onclick="showPrevious()"/>
             <img src="{{ $icon.RelPermalink }}" class="simple-slideshow-arrow right-arrow" onclick="showNext()"/>
             {{ range $img := $imgs }}
-            <img src="{{ $img.RelPermalink }}" style="width: 100%; display: none;" class="simple-slideshow-img" loading="lazy">
+            <img src="{{ $img.RelPermalink }}" style="width: 100%; display: none; aspect-ratio: {{ $img.Width }} / {{ $img.Height }};" class="simple-slideshow-img" loading="lazy">
             {{ end }}
             </div>
     </div>
 </div>
 
 <script>
-    const imgs = document.getElementsByClassName("simple-slideshow-img");
+    const imgs = Array.from(document.getElementsByClassName("simple-slideshow-img"))
+        .sort((a,b) => {{ $sortOrder }} === 'asc' ? a.src > b.src : a.src < b.src);
     let curIndex = 0;
+
+    if (imgs.length !== 0)
+        imgs[0].style.display = "block";
 
     function showPrevious() {
         showSlide(curIndex-1);
@@ -107,7 +107,4 @@
             150);
         {{ end }}
     }
-
-    if (imgs.length !== 0)
-        imgs[0].style.display = "block";
 </script>

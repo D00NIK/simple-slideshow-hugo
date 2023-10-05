@@ -68,8 +68,8 @@ Example:
 
 ## To Do
 
-- ❌ Page jumping fix
 - ❌ Allow multiple per page
 - ❌ Automatically optimize images
+- ✅ Page jumping fix
 - ✅ Sorting option
 
