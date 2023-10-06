@@ -4,7 +4,7 @@ licenseLink = "https://github.com/D00NIK/simple-slideshow-hugo/blob/main/LICENSE
 description = "A hugo theme providing a shortcode for creating slideshow galleries"
 homepage = "https://github.com/D00NIK/simple-slideshow-hugo"
 tags = ["minimal", "gallery"]
-features = ["customization", "intuitive", "simple"]
+features = ["intuitive", "simple"]
 
 [author]
     name = "Dominik Pakuła"
