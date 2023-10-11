@@ -6,6 +6,7 @@
 {{ $icon := resources.Get "svg/simple-slideshow-arrow.svg" }}
 
 {{ $sortOrder := .Get "sortOrder" | default "asc" }}
+{{ $loopImages := .Get "loopImages" | default "false "}}
 {{ $topSlideBar := .Get "topSlideBar" | default true }}
 {{ $scrollIntoView := .Get "scrollIntoView" | default true }}
 {{ $maxThumbnailHeight := .Get "maxThumbnailHeight" | default 150 }}
