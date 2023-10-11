@@ -55,6 +55,7 @@ content/
 ## Configuration
 
 - `dir` - default: `/` - change where the shortcode looks for images
+- `loopImages` - default: `false` - trying to get image after last/before first with cause it to go back to the beginning/end
 - `topSlideBar` - default: `true` - slidebar for thumbnails on top
 - `scrollIntoView` - default: `true` - when changing slide scrolls if the image is outside of user's vision
 - `maxThumbnailHeight` - default: 150 - max thumbnail height in px.
