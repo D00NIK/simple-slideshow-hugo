@@ -3,8 +3,7 @@
 	{{ $imgs = .Page.Resources.Match (.Get "dir") }}
 {{ end }}
 
-{{ $icon := resources.Get "svg/simple-slideshow-arrow.svg" }}
-
+{{ $icon := resources.Get (.Get "icon" | default "svg/simple-slideshow-arrow.svg") }}
 {{ $sortOrder := .Get "sortOrder" | default "asc" }}
 {{ $loopImages := .Get "loopImages" | default false }}
 {{ $topSlideBar := .Get "topSlideBar" | default true }}
@@ -44,7 +43,6 @@
     }
 
     .simple-slideshow-arrow-{{$id}} {
-        background-color: #fff;
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
