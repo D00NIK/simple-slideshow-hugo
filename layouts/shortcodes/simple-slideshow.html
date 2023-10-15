@@ -60,9 +60,9 @@
     }
 </style>
 
-{{ $showPrevious := safeJS (print "showPrevious_" $id )}}
-{{ $showNext := safeJS (print "showNext_" $id )}}
-{{ $showSlide := safeJS (print "showSlide_" $id )}}
+{{ $showPrevious := safeJS (print "showPrevious_" $id) }}
+{{ $showNext := safeJS (print "showNext_" $id) }}
+{{ $showSlide := safeJS (print "showSlide_" $id) }}
 
 <div class="simple-slideshow-container-{{$id}}">
     <div class="simple-slideshow-slides-{{$id}}">
@@ -82,8 +82,8 @@
     </div>
 </div>
 
-{{ $imgs := safeJS (print "img_" $id )}}
-{{ $curIndex := safeJS (print "curIndex_" $id )}}
+{{ $imgs := safeJS (print "img_" $id) }}
+{{ $curIndex := safeJS (print "curIndex_" $id) }}
 
 <script>
     const {{ $imgs }} = Array.from(document.getElementsByClassName("simple-slideshow-img-{{$id}}"))

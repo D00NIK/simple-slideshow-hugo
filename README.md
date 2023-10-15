@@ -1,6 +1,6 @@
 # simple-slideshow-hugo
 
-![Showcase image](images/screenshot.jpg)
+![Showcase image](images/screenshot.webp)
 Images: [1](https://pixabay.com/photos/agriculture-tractor-farming-8275498/) [2](https://pixabay.com/photos/cat-kitten-animal-domestic-mammal-8260638/) [3](https://pixabay.com/photos/dog-puppy-canine-pet-animal-cute-8262506/) [4](https://pixabay.com/photos/krka-river-waterfall-cascades-8274679/) [5](https://pixabay.com/photos/mountain-village-houses-alps-8190836/) [6](https://pixabay.com/photos/stones-pebbles-minerals-quartz-8249322/)\
 Theme: [simple-hugo](https://github.com/D00NIK/simple-hugo)\
 Arrow SVG: Edited and downloaded from [here](https://www.svgrepo.com/svg/521961/arrow-left-square)
