@@ -58,6 +58,11 @@
         transform: translateY(-50%) rotateZ(180deg);
         right: 0;
     }
+
+    .simple-slideshow-img-{{$id}} {
+        max-width: 100%;
+        margin: auto;
+    }
 </style>
 
 {{ $showPrevious := safeJS (print "showPrevious_" $id) }}
@@ -76,7 +81,7 @@
             <img src="{{ $icon.RelPermalink }}" class="simple-slideshow-arrow-{{$id}}" onclick="{{ $showPrevious }}()"/>
             <img src="{{ $icon.RelPermalink }}" class="simple-slideshow-arrow-{{$id}} right-arrow-{{$id}}" onclick="{{ $showNext }}()"/>
             {{ range $img := . }}
-            <img src="{{ $img.RelPermalink }}" style="width: 100%; display: none; aspect-ratio: {{ $img.Width }} / {{ $img.Height }};" class="simple-slideshow-img-{{$id}}" loading="lazy">
+            <img src="{{ $img.RelPermalink }}" style="display: none; aspect-ratio: {{ $img.Width }} / {{ $img.Height }};" class="simple-slideshow-img-{{$id}}" loading="lazy">
             {{ end }}
             </div>
     </div>
